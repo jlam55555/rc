@@ -1,0 +1,22 @@
+# Set escape key to C-o
+escape ^Oo
+
+# Set modeline
+# https://unix.stackexchange.com/a/319364/307410
+hardstatus alwayslastline "%{kb}%{c}[%{w}%D %d/%m/%Y %c:%s%{c}] %{w}%-w%{rk}%n %t%{wb}%+w %=%{c}[%{W}%H %l%{c}]"
+
+# Screen split
+bind ^H split
+bind ^V split -v
+bind ^X remove
+bind ^B focus left
+bind ^F focus right
+bind ^P focus up
+bind ^N focus down
+
+# Convenient
+bind ^K kill
+bind ^T title
+
+# Turn off flow control (C-s/C-q)
+defflow off
