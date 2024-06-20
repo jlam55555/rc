@@ -18,7 +18,7 @@ function ps1 {
         "[\u@\h \W]\$ " # default
         "${bold}${green}\$${end} " # simple
         "${bold}${blue}\W ${green}\$${end} " # dirname
-        "$bold$blue\W \$(if [[ \"\$(git rev-parse --is-inside-work-tree 2>/dev/null)\" == \"true\" ]]; then echo \"$red\$(basename \$(git rev-parse --show-toplevel))<\$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)> \"; fi)$green\$$end " # git prompt
+        "$bold$blue\W \$(if [[ \"\$(git rev-parse --is-inside-work-tree 2>/dev/null)\" == \"true\" ]]; then echo \"$red\$(basename \$(git rev-parse --show-toplevel))<\$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)> \"; fi)$blue\$$end " # git prompt
     )
 
     # Cycle through prompts
@@ -42,6 +42,9 @@ export TERM="xterm-256color"
 export EDITOR="emacsclient -nw"
 alias ed="pkill emacs; emacs --daemon" # ed = emacs daemon
 alias ec="${EDITOR}"                   # ec = emacs client
+
+# GNU screen doesn't like COLORTERM=truecolor
+export COLORTERM=xterm-256color
 
 # Turn off flow control
 stty -ixon

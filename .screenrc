@@ -18,5 +18,9 @@ bind ^N focus down
 bind ^K kill
 bind ^T title
 
+# Very convenient
+bind ^I next
+bind ^E prev
+
 # Turn off flow control (C-s/C-q)
 defflow off
